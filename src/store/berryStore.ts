@@ -7,7 +7,7 @@ export const useBerryStore = defineStore('berry', {
   state: () => ({
     berries: [] as BerryListItem[],
     currentBerry: null as BerryDetail | null,
-    loadingList: false,
+    loading: false,
     loadingDetail: false,
     totalItems: 0,
     itemsPerPage: 20,
@@ -17,35 +17,48 @@ export const useBerryStore = defineStore('berry', {
   }),
 
   getters: {
-    filteredBerries: (state) => {
+    filteredBerries(state) {
+      if (!state.berries) return [];
       if (!state.searchTerm) return state.berries;
+      
       return state.berries.filter(berry => 
         berry.name.toLowerCase().includes(state.searchTerm.toLowerCase())
       );
     },
 
-    sortedBerries: (state, getters) => {
-      return [...getters.filteredBerries].sort((a, b) => a.name.localeCompare(b.name));
+    sortedBerries(state): BerryListItem[] {
+      const filtered = this.filteredBerries;
+      if (!filtered) return [];
+      
+      return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
     },
 
-    totalPages: (state) => Math.ceil(state.totalItems / state.itemsPerPage),
+    totalPages(state) {
+      return Math.ceil(state.totalItems / state.itemsPerPage);
+    },
     
-    offset: (state) => (state.currentPage - 1) * state.itemsPerPage
+    offset(state) {
+      return (state.currentPage - 1) * state.itemsPerPage;
+    }
   },
 
   actions: {
     async fetchBerries() {
-      this.loadingList = true;
+      this.loading = true;
       this.error = null;
       try {
         const response = await getBerries(this.itemsPerPage, this.offset);
+        if (!response || !response.results) {
+          throw new Error('Invalid response format');
+        }
         this.berries = response.results;
         this.totalItems = response.count;
       } catch (err) {
         this.error = err instanceof Error ? err.message : 'Error fetching berries';
         console.error(this.error);
+        this.berries = []; // Ensure berries is always an array
       } finally {
-        this.loadingList = false;
+        this.loading = false;
       }
     },
 
