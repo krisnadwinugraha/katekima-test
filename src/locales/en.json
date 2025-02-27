@@ -1,0 +1,71 @@
+{
+    "navigation": {
+      "berryList": "Berry List",
+      "addProduct": "Add Product"
+    },
+    "table": {
+      "no": "No",
+      "name": "Name",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "detail": "Detail",
+      "search": "Search",
+      "itemsPerPage": "Items per page",
+      "addNew": "Add New"
+    },
+    "detail": {
+      "berryDetail": "Berry Detail",
+      "select": "Select Berry",
+      "viewDetails": "View Details",
+      "goBack": "Go Back",
+      "id": "ID",
+      "name": "Name",
+      "growthTime": "Growth Time",
+      "maxHarvest": "Max Harvest",
+      "size": "Size",
+      "firmness": "Firmness",
+      "naturalGiftPower": "Natural Gift Power",
+      "naturalGiftType": "Natural Gift Type",
+      "soilDryness": "Soil Dryness",
+      "smoothness": "Smoothness",
+      "flavors": "Flavors"
+    },
+    "product": {
+      "form": {
+        "title": "Title",
+        "price": "Price",
+        "description": "Description",
+        "category": "Category",
+        "image": "Image URL",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "addTitle": "Add New Product",
+        "editTitle": "Edit Product"
+      },
+      "validation": {
+        "required": "This field is required",
+        "minLength": "Must be at least {min} characters long",
+        "number": "Must be a valid number"
+      },
+      "alerts": {
+        "addSuccess": "Product added successfully!",
+        "updateSuccess": "Product updated successfully!",
+        "deleteSuccess": "Product deleted successfully!",
+        "error": "An error occurred"
+      }
+    },
+    "loading": "Loading...",
+    "error": "Error: {message}",
+    "noData": "No data found",
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next",
+      "of": "of"
+    },
+    "language": {
+      "en": "English",
+      "id": "Indonesian",
+      "select": "Language"
+    }
+  }

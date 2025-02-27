@@ -1,0 +1,71 @@
+{
+    "navigation": {
+      "berryList": "Daftar Berry",
+      "addProduct": "Tambah Produk"
+    },
+    "table": {
+      "no": "No",
+      "name": "Nama",
+      "actions": "Aksi",
+      "edit": "Edit",
+      "delete": "Hapus",
+      "detail": "Detail",
+      "search": "Cari",
+      "itemsPerPage": "Data per halaman",
+      "addNew": "Tambah Baru"
+    },
+    "detail": {
+      "berryDetail": "Detail Berry",
+      "select": "Pilih Berry",
+      "viewDetails": "Lihat Detail",
+      "goBack": "Kembali",
+      "id": "ID",
+      "name": "Nama",
+      "growthTime": "Waktu Tumbuh",
+      "maxHarvest": "Panen Maksimum",
+      "size": "Ukuran",
+      "firmness": "Kekerasan",
+      "naturalGiftPower": "Kekuatan Natural Gift",
+      "naturalGiftType": "Tipe Natural Gift",
+      "soilDryness": "Kekeringan Tanah",
+      "smoothness": "Kehalusan",
+      "flavors": "Rasa"
+    },
+    "product": {
+      "form": {
+        "title": "Judul",
+        "price": "Harga",
+        "description": "Deskripsi",
+        "category": "Kategori",
+        "image": "URL Gambar",
+        "submit": "Simpan",
+        "cancel": "Batal",
+        "addTitle": "Tambah Produk Baru",
+        "editTitle": "Edit Produk"
+      },
+      "validation": {
+        "required": "Bidang ini wajib diisi",
+        "minLength": "Minimal {min} karakter",
+        "number": "Harus berupa angka yang valid"
+      },
+      "alerts": {
+        "addSuccess": "Produk berhasil ditambahkan!",
+        "updateSuccess": "Produk berhasil diperbarui!",
+        "deleteSuccess": "Produk berhasil dihapus!",
+        "error": "Terjadi kesalahan"
+      }
+    },
+    "loading": "Memuat...",
+    "error": "Error: {message}",
+    "noData": "Data tidak ditemukan",
+    "pagination": {
+      "prev": "Sebelumnya",
+      "next": "Selanjutnya",
+      "of": "dari"
+    },
+    "language": {
+      "en": "Inggris",
+      "id": "Indonesia",
+      "select": "Bahasa"
+    }
+  }
