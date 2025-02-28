@@ -111,6 +111,20 @@ export const useBerryStore = defineStore('berry', {
         this.itemsPerPage = state.itemsPerPage || 10;
         this.searchTerm = state.searchTerm || '';
       }
+    },
+
+    async addBerry(berry: Partial<BerryDetail>) {
+      // In a real application, this would make an API call
+      // For this example, we'll just simulate success
+      console.log('Adding berry:', berry);
+      return Promise.resolve();
+    },
+
+    async updateBerry(id: number, berry: Partial<BerryDetail>) {
+      // In a real application, this would make an API call
+      // For this example, we'll just simulate success
+      console.log('Updating berry:', id, berry);
+      return Promise.resolve();
     }
   }
 });

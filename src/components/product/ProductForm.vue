@@ -246,7 +246,7 @@ const submitForm = async () => {
     
     if (!productStore.error) {
       setTimeout(() => {
-        router.push({ name: 'berries' });
+        router.push({ name: 'products' });  // Changed from 'berries' to 'products'
       }, 2000); // Redirect after 2 seconds to show the success message
     }
   } catch (err) {
@@ -257,7 +257,7 @@ const submitForm = async () => {
 };
 
 const cancel = () => {
-  router.push({ name: 'berries' });
+  router.push({ name: 'products' });  // Changed from 'berries' to 'products'
 };
 
 // Set form data if editing

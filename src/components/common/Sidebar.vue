@@ -79,7 +79,7 @@ const moduleDropdownOpen = ref(false);
 // Navigation menu items with localization
 const localizedMenuItems = computed(() => [
   { name: t('navigation.berryList'), route: { name: 'berries' } },
-  { name: t('navigation.addProduct'), route: { name: 'product-add' } }
+  { name: t('navigation.addProduct'), route: { name: 'products' } }
 ]);
   
 // Get current route for active state

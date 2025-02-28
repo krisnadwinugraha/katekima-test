@@ -56,6 +56,35 @@
         "error": "An error occurred"
       }
     },
+    "berry": {
+      "form": {
+        "addTitle": "Add New Berry",
+        "editTitle": "Edit Berry",
+        "name": "Berry Name",
+        "growthTime": "Growth Time",
+        "maxHarvest": "Maximum Harvest",
+        "size": "Size",
+        "smoothness": "Smoothness"
+      },
+      "validation": {
+        "required": "This field is required",
+        "minLength": "Must be at least {min} characters",
+        "number": "Must be a valid number greater than 0"
+      },
+      "alerts": {
+        "addSuccess": "Berry added successfully!",
+        "updateSuccess": "Berry updated successfully!",
+        "deleteSuccess": "Berry deleted successfully!",
+        "error": "An error occurred"
+      }
+    },
+    "common": {
+      "cancel": "Cancel",
+      "update": "Update",
+      "create": "Create",
+      "processing": "Processing...",
+      "goBack": "Go Back"
+    },
     "loading": "Loading...",
     "error": "Error: {message}",
     "noData": "No data found",

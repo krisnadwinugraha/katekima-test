@@ -14,7 +14,7 @@
         </div>
         
         <router-link 
-          :to="{ name: 'product-add' }" 
+          :to="{ name: 'berry-add' }" 
           class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md"
         >
           {{ $t('table.addNew') }}
@@ -60,12 +60,12 @@
                 >
                   {{ $t('table.detail') }}
                 </router-link>
-                <button 
-                  @click="handleEdit(getBerryId(berry.url), berry.name)" 
+                <router-link 
+                  :to="{ name: 'berry-edit', params: { id: getBerryId(berry.url) }}" 
                   class="text-yellow-600 hover:text-yellow-900 bg-yellow-50 px-3 py-1 rounded-md transition-all duration-200 hover:bg-yellow-100"
                 >
                   {{ $t('table.edit') }}
-                </button>
+                </router-link>
                 <button 
                   @click="handleDelete(getBerryId(berry.url), berry.name)" 
                   class="text-red-600 hover:text-red-900 bg-red-50 px-3 py-1 rounded-md transition-all duration-200 hover:bg-red-100"
@@ -97,14 +97,14 @@
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBerryStore } from '../../store/berryStore';
-import { useProductStore } from '../../store/productStore';
+// Remove productStore import as it's not needed
 import LoadingSkeleton from '../common/LoadingSkeleton.vue';
 import Pagination from '../common/Pagination.vue';
 import Swal from 'sweetalert2';
 
 const router = useRouter();
 const berryStore = useBerryStore();
-const productStore = useProductStore();
+// Remove productStore constant
 
 // Initialize searchQuery with store value
 const searchQuery = ref(berryStore.searchTerm);
@@ -147,8 +147,7 @@ function handleEdit(id: number, name: string) {
     confirmButtonText: 'Edit'
   }).then((result) => {
     if (result.isConfirmed) {
-      // For this example, we're redirecting to the product edit page
-      router.push({ name: 'product-edit', params: { id } });
+      router.push({ name: 'berry-edit', params: { id: id.toString() } });
     }
   });
 }
@@ -165,12 +164,16 @@ function handleDelete(id: number, name: string) {
     cancelButtonText: 'Cancel'
   }).then((result) => {
     if (result.isConfirmed) {
-      // In a real app, you'd call the API to delete the item
+      // Here you would typically call a delete method from berryStore
+      // For now, we'll just show the success message
       Swal.fire({
         title: 'Deleted!',
         text: `Berry ${name} has been deleted.`,
         icon: 'success',
         confirmButtonColor: '#4f46e5'
+      }).then(() => {
+        // Optionally refresh the list after deletion
+        berryStore.fetchBerries();
       });
     }
   });

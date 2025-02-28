@@ -56,6 +56,35 @@
         "error": "Terjadi kesalahan"
       }
     },
+    "berry": {
+      "form": {
+        "addTitle": "Tambah Berry Baru",
+        "editTitle": "Edit Berry",
+        "name": "Nama Berry",
+        "growthTime": "Waktu Tumbuh",
+        "maxHarvest": "Panen Maksimum",
+        "size": "Ukuran",
+        "smoothness": "Kehalusan"
+      },
+      "validation": {
+        "required": "Bidang ini wajib diisi",
+        "minLength": "Minimal {min} karakter",
+        "number": "Harus berupa angka yang valid dan lebih dari 0"
+      },
+      "alerts": {
+        "addSuccess": "Berry berhasil ditambahkan!",
+        "updateSuccess": "Berry berhasil diperbarui!",
+        "deleteSuccess": "Berry berhasil dihapus!",
+        "error": "Terjadi kesalahan"
+      }
+    },
+    "common": {
+      "cancel": "Batal",
+      "update": "Perbarui",
+      "create": "Buat",
+      "processing": "Memproses...",
+      "goBack": "Kembali"
+    },
     "loading": "Memuat...",
     "error": "Error: {message}",
     "noData": "Data tidak ditemukan",

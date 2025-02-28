@@ -19,6 +19,16 @@ const router = createRouter({
       props: true
     },
     {
+      path: '/berries/add',
+      name: 'berry-add',
+      component: () => import('./views/BerryAddView.vue')
+    },
+    {
+      path: '/berries/edit/:id',
+      name: 'berry-edit',
+      component: () => import('./views/BerryEditView.vue')
+    },
+    {
       path: '/products',
       name: 'products',
       component: () => import('./views/ProductListview.vue')
