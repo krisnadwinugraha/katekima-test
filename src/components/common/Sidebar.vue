@@ -3,7 +3,7 @@
     <!-- Logo area -->
     <div class="p-6">
       <div class="bg-white/10 backdrop-blur-sm rounded-lg py-4 text-center border border-white/10 shadow-inner">
-        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">Your Logo</span>
+        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">Logo</span>
       </div>
     </div>
   
@@ -13,7 +13,7 @@
         class="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between cursor-pointer border border-white/10 hover:bg-white/15 transition-colors duration-200"
         @click="toggleModuleDropdown"
       >
-        <span class="text-white font-medium">Nama Modul</span>
+        <span class="text-white font-medium">{{ $t('sidebar.moduleSelect') }}</span>
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           class="h-4 w-4 transition-transform duration-200" 
@@ -31,16 +31,16 @@
         v-if="moduleDropdownOpen" 
         class="mt-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 shadow-lg overflow-hidden"
       >
-        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150 border-b border-white/5">Module 1</div>
-        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150 border-b border-white/5">Module 2</div>
-        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150">Module 3</div>
+        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150 border-b border-white/5">{{ $t('sidebar.module1') }}</div>
+        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150 border-b border-white/5">{{ $t('sidebar.module2') }}</div>
+        <div class="p-3 text-sm hover:bg-white/10 cursor-pointer transition-colors duration-150">{{ $t('sidebar.module3') }}</div>
       </div>
     </div>
   
     <!-- Menu items (Navigation Links) -->
     <div class="py-4 px-3 flex-1 space-y-1">
       <router-link 
-        v-for="(menuItem, index) in menuItems" 
+        v-for="(menuItem, index) in localizedMenuItems" 
         :key="index" 
         :to="menuItem.route"
         class="block px-3 py-3 text-sm rounded-lg cursor-pointer transition-all duration-200 flex items-center"
@@ -58,7 +58,7 @@
     <!-- Bottom section -->
     <div class="p-6 border-t border-white/10 mt-auto">
       <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 text-center">
-        <div class="text-xs text-white/60">Application Version</div>
+        <div class="text-xs text-white/60">{{ $t('sidebar.appVersion') }}</div>
         <div class="text-sm font-medium">v1.0.0</div>
       </div>
     </div>
@@ -66,16 +66,20 @@
 </template>
   
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
   
+// Get i18n composition API
+const { t } = useI18n();
+
 // Dropdown state
 const moduleDropdownOpen = ref(false);
   
-// Navigation menu items
-const menuItems = ref([
-  { name: 'Berry List', route: { name: 'berries' } },
-  { name: 'Add Product', route: { name: 'product-add' } }
+// Navigation menu items with localization
+const localizedMenuItems = computed(() => [
+  { name: t('navigation.berryList'), route: { name: 'berries' } },
+  { name: t('navigation.addProduct'), route: { name: 'product-add' } }
 ]);
   
 // Get current route for active state

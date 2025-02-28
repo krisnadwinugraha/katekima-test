@@ -27,7 +27,7 @@
                 <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <span class="text-white font-bold">YL</span>
                 </div>
-                <h3 class="text-white font-bold text-lg">Your Logo</h3>
+                <h3 class="text-white font-bold text-lg">Logo</h3>
               </div>
               <div class="flex flex-wrap justify-center gap-6">
                 <a href="#" class="text-white/90 hover:text-white transition-colors">Home</a>
@@ -37,7 +37,7 @@
               </div>
               <div class="mt-4 md:mt-0">
                 <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-flex items-center">
-                  <span class="text-white text-sm">© 2025 Your Company</span>
+                  <span class="text-white text-sm">© 2025 Krisna</span>
                 </div>
               </div>
             </div>

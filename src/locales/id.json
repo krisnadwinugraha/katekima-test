@@ -1,7 +1,8 @@
 {
     "navigation": {
       "berryList": "Daftar Berry",
-      "addProduct": "Tambah Produk"
+      "addProduct": "Tambah Produk",
+      "productList": "Daftar Produk"
     },
     "table": {
       "no": "No",
@@ -62,6 +63,13 @@
       "prev": "Sebelumnya",
       "next": "Selanjutnya",
       "of": "dari"
+    },
+    "sidebar": {
+      "moduleSelect": "Nama Modul",
+      "module1": "Modul 1",
+      "module2": "Modul 2",
+      "module3": "Modul 3",
+      "appVersion": "Versi Aplikasi"
     },
     "language": {
       "en": "Inggris",

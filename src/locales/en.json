@@ -1,7 +1,8 @@
 {
     "navigation": {
       "berryList": "Berry List",
-      "addProduct": "Add Product"
+      "addProduct": "Add Product",
+      "productList": "Product List"
     },
     "table": {
       "no": "No",
@@ -63,6 +64,13 @@
       "next": "Next",
       "of": "of"
     },
+    "sidebar": {
+      "moduleSelect": "Module Name",
+      "module1": "Module 1",
+      "module2": "Module 2",
+      "module3": "Module 3",
+      "appVersion": "Application Version"
+    }, 
     "language": {
       "en": "English",
       "id": "Indonesian",
